@@ -8,6 +8,8 @@ const job = new cron.CronJob("*/14 * * * *", function () {
             else console.log("Error sending GET request");
         })
         .on("error", (e) => console.error(`Got error: ${e.message}`));
+
+        console.log(process.env.API_URL);
 });
 
 export default job;
